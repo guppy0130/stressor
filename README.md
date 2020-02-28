@@ -7,20 +7,24 @@
 ```sh
 $ node index.js
 
-Usage: index.js -m <method> -u <url> -c <count> [options]
+Usage: index.js -u <url> [options]
 
 Options:
-  --version         Show version number                                [boolean]
-  --method, -m      type of HTTP request to make
-                                             [required] [choices: "GET", "POST"]
   --url, -u         absolute url to connect to                        [required]
-  --count, -c       how many times to make the request                [required]
+  --method, -m      type of HTTP request to make
+                                       [choices: "GET", "POST"] [default: "GET"]
+  --count, -c       how many times to make the request              [default: 1]
   --sequential, -s  make requests one after another instead of all at once
                                                                        [boolean]
-  --timeout, -t     abort requests that take longer than this in ms     [number]
+  --timeout, -t     abort requests that take longer than this in ms
+                                                        [number] [default: 5000]
   --verbose, -v     increase verbosity level                             [count]
-  -h, --help        Show help                                          [boolean]
+  --help, -h        Show help                                          [boolean]
+  --version         Show version number                                [boolean]
+
+Examples:
+  node index.js -u http://google.com  Make 1 GET request to http://google.com
 ```
 
-* 3 verbosity levels (generally a good idea to run with just one, though, to view timings)
-* prints out counts of returned status codes at the minimum
+* 4 (0-3) verbosity levels (generally a good idea to run with just one, though, to view timings)
+* Prints out counts of returned status codes and timings at the minimum
