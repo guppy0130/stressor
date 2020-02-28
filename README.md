@@ -26,5 +26,5 @@ Examples:
   node index.js -u http://google.com  Make 1 GET request to http://google.com
 ```
 
-* 4 (0-3) verbosity levels (generally a good idea to run with just one, though, to view timings)
+* 4 (0-3) verbosity levels
 * Prints out counts of returned status codes and timings at the minimum
